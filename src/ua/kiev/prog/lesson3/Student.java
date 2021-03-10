@@ -3,9 +3,8 @@ package ua.kiev.prog.lesson3;
 public class Student extends Person {
     private String groupName;
 
-    public Student(String firstName, String secondName, String lastName, Sex sex, int age, String groupName) {
+    public Student(String firstName, String secondName, String lastName, Sex sex, int age) {
         super(firstName, secondName, lastName, sex, age);
-        this.groupName = groupName;
     }
 
     public Student() {
@@ -22,8 +21,7 @@ public class Student extends Person {
     @Override
     public String toString() {
         return "Student{" +
-                "Name='" + getFirstName() + getSecondName() + getLastName() + '\'' +
-                "groupName='" + groupName + '\'' +
+                "Name='" + getLastName() + " " + getSecondName() + " " + getFirstName() + '\'' +
                 '}';
     }
 }
