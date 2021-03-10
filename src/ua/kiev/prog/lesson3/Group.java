@@ -1,6 +1,6 @@
 package ua.kiev.prog.lesson3;
 
-import ua.kiev.prog.lesson3.exeptions.StudentNotAddedException;
+import ua.kiev.prog.lesson3.exceptions.StudentNotAddedException;
 
 public class Group {
     private Student[] students = new Student[10];
