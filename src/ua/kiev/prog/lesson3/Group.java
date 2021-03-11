@@ -34,7 +34,7 @@ public class Group {
             if (students[i] == null) {
                 students[i] = student;
                 student.setGroupName(this.groupName);
-                System.out.println("student " + student.getLastName()+ " " + student.getFirstName() + " added!");
+                System.out.println("student " + student.getLastName() + " " + student.getFirstName() + " added!");
                 break;
             }
         }
@@ -42,12 +42,9 @@ public class Group {
 
     @Override
     public String toString() {
-        Arrays.sort(students, new Comparator<Student>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                return o1.getLastName().compareTo(o2.getLastName());
-            }
-        });
+        Arrays.sort(students, (o1, o2) -> CheckNull.checkNull(o1, o2) != CheckNull.NOT_NULL ? CheckNull.checkNull(o1, o2) :
+                o1.getLastName().compareTo(o2.getLastName()));
+
         return "Group{" +
                 "groupName='" + groupName + '\'' +
                 ", students=" + Arrays.toString(students) +

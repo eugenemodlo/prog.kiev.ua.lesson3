@@ -28,13 +28,18 @@ public class Main {
             group.addStudent(studentSeven);
             group.addStudent(studentEight);
             group.addStudent(studentNine);
-            group.addStudent(studentTen);
 
-//            group.addStudent(studentZero);
         } catch (StudentNotAddedException e) {
             System.out.println(e.getMessage());
         }
 
         System.out.println(group.toString());
+
+        try {
+            group.addStudent(studentZero);
+            group.addStudent(studentTen);
+        } catch (StudentNotAddedException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
