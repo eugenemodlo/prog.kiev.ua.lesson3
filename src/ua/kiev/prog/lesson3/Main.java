@@ -33,7 +33,7 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-        System.out.println(group.toString());
+        System.out.println(group);
 
         try {
             group.addStudent(studentZero);
