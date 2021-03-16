@@ -6,9 +6,9 @@ import ua.kiev.prog.lesson3.exceptions.StudentNotFoundException;
 import java.util.Arrays;
 
 public class Group {
-    private final int STUDENTS_AMOUNT = 10;
+    private static final int STUDENTS_AMOUNT = 10;
     private String groupName;
-    private Student[] students = new Student[STUDENTS_AMOUNT];
+    private final Student[] students = new Student[STUDENTS_AMOUNT];
 
     public Group(String groupName) {
         this.groupName = groupName;
