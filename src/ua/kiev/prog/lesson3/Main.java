@@ -1,6 +1,7 @@
 package ua.kiev.prog.lesson3;
 
 import ua.kiev.prog.lesson3.exceptions.StudentNotAddedException;
+import ua.kiev.prog.lesson3.exceptions.StudentNotFoundException;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,6 +19,8 @@ public class Main {
 
         Group group = new Group("AA-00");
 
+        System.out.println("STEP 1: Add nine students");
+
         try {
             group.addStudent(studentOne);
             group.addStudent(studentTwo);
@@ -33,12 +36,36 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
+        System.out.println("STEP 2: Print group sorted by last name");
         System.out.println(group);
 
+        System.out.println("STEP 3: Add students 10 and 11 with exception");
         try {
             group.addStudent(studentZero);
             group.addStudent(studentTen);
         } catch (StudentNotAddedException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("STEP 4: Find student with last name - Hamp");
+
+        try {
+            System.out.println(group.getStudentByLastName("Hamp"));
+        } catch (StudentNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("STEP 5: Delete student");
+
+        try {
+            group.removeStudent(studentFive);
+        } catch (StudentNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("STEP 6: Try to find deleted student");
+        try {
+            System.out.println(group.getStudentByLastName("Hamp"));
+        } catch (StudentNotFoundException e) {
             System.out.println(e.getMessage());
         }
     }
