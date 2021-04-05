@@ -6,9 +6,9 @@ import ua.kiev.prog.lesson3.exceptions.StudentNotFoundException;
 import java.util.Arrays;
 
 public class Group {
-    private static final int STUDENTS_AMOUNT = 10;
+    private static final int MAX_STUDENTS_AMOUNT = 10;
     private String groupName;
-    private final Student[] students = new Student[STUDENTS_AMOUNT];
+    private final Student[] students = new Student[MAX_STUDENTS_AMOUNT];
 
     public Group(String groupName) {
         this.groupName = groupName;
@@ -30,14 +30,14 @@ public class Group {
     }
 
     public void addStudent(Student student) throws StudentNotAddedException {
-        for (int i = 0; i < STUDENTS_AMOUNT - 1; i++) {
+        for (int i = 0; i < MAX_STUDENTS_AMOUNT - 1; i++) {
             if (students[i] == null) {
                 students[i] = student;
                 student.setGroupName(this.groupName);
                 System.out.println("student " + student.getLastName() + " " + student.getFirstName() + " added!");
                 break;
             }
-            if (i == STUDENTS_AMOUNT - 2) throw new StudentNotAddedException();
+            if (i == MAX_STUDENTS_AMOUNT - 2) throw new StudentNotAddedException();
         }
     }
 
