@@ -19,7 +19,7 @@ public class Main {
 
         Group group = new Group("AA-00");
 
-        System.out.println("STEP 1: Add nine students");
+        System.out.println("STEP 1: Add ten students");
 
         try {
             group.addStudent(studentOne);
@@ -31,6 +31,7 @@ public class Main {
             group.addStudent(studentSeven);
             group.addStudent(studentEight);
             group.addStudent(studentNine);
+            group.addStudent(studentTen);
 
         } catch (StudentNotAddedException e) {
             System.out.println(e.getMessage());
@@ -39,10 +40,9 @@ public class Main {
         System.out.println("STEP 2: Print group sorted by last name");
         System.out.println(group);
 
-        System.out.println("STEP 3: Add students 10 and 11 with exception");
+        System.out.println("STEP 3: Add students 11 with exception");
         try {
             group.addStudent(studentZero);
-            group.addStudent(studentTen);
         } catch (StudentNotAddedException e) {
             System.out.println(e.getMessage());
         }
