@@ -30,14 +30,14 @@ public class Group {
     }
 
     public void addStudent(Student student) throws StudentNotAddedException {
-        for (int i = 0; i < MAX_STUDENTS_AMOUNT - 1; i++) {
+        for (int i = 0; i <= MAX_STUDENTS_AMOUNT; i++) {
+            if (i == MAX_STUDENTS_AMOUNT) throw new StudentNotAddedException();
             if (students[i] == null) {
                 students[i] = student;
                 student.setGroupName(this.groupName);
                 System.out.println("student " + student.getLastName() + " " + student.getFirstName() + " added!");
                 break;
             }
-            if (i == MAX_STUDENTS_AMOUNT - 2) throw new StudentNotAddedException();
         }
     }
 
