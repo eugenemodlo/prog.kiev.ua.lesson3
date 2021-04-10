@@ -1,5 +1,7 @@
 package ua.kiev.prog.lesson3;
 
+import java.util.Objects;
+
 public class Person {
     private String firstName;
     private String secondName;
@@ -68,5 +70,18 @@ public class Person {
                 ", sex=" + sex +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+
+        return this.hashCode() == o.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFirstName(), getSecondName(), getLastName(), getSex(), getAge());
     }
 }
