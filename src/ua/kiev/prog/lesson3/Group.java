@@ -65,20 +65,16 @@ public class Group {
         return stud;
     }
 
-    public Student removeStudent(String lastName) throws StudentNotFoundException {
-        Student removedStudent = new Student();
+    public boolean removeStudent(String lastName) throws StudentNotFoundException {
         for (int i = 0; i <= students.length; i++) {
             if (i == students.length) {
                 throw new StudentNotFoundException();
             }
-            if (getStudentByLastName(lastName).equals(students[i])) {
-
-                removedStudent = students[i];
+            if (students[i].getLastName().equals(lastName)) {
                 students[i] = null;
-                System.out.println("Student "+ lastName + " removed from group!");
+                return true;
             }
-
         }
-        return removedStudent;
+        return false;
     }
 }

@@ -57,7 +57,9 @@ public class Main {
         System.out.println("STEP 5: Delete student");
 
         try {
-            group.removeStudent("Hamp");
+            if (group.removeStudent("Hamp")) {
+                System.out.println("Student successfully removed!");
+            }
         } catch (StudentNotFoundException e) {
             System.out.println(e.getMessage());
         }
